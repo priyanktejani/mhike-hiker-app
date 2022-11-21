@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mhike/constants/routes.dart';
 import 'package:mhike/gigs.dart';
 import 'package:mhike/pages/add_hike_page.dart';
 import 'package:mhike/pages/trail_detail_page.dart';
+import 'package:mhike/services/auth/auth_service.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -84,9 +86,9 @@ class _HomePageState extends State<HomePage>
                 ),
                 child: Center(
                   child: Text(
-                    'MHike',
+                    'mhike',
                     style: GoogleFonts.dancingScript(
-                      fontSize: 70.0,
+                      fontSize: 82.0,
                       fontWeight: FontWeight.w900,
                       color: Colors.white12,
                     ),
@@ -108,7 +110,7 @@ class _HomePageState extends State<HomePage>
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const AddHikePage()),
+                        builder: (context) => const AddHikePage(),),
                   );
                 },
               ),
@@ -124,8 +126,16 @@ class _HomePageState extends State<HomePage>
                     fontSize: 16,
                   ),
                 ),
-                onTap: () {
+                onTap: () async {
                   Navigator.pop(context);
+                  final logout = await logOutDialog(context);
+                  if (logout) {
+                    await AuthService.firebase().logout();
+                    Navigator.of(context).pushNamedAndRemoveUntil(
+                      loginRoute,
+                      (_) => false,
+                    );
+                  }
                 },
               ),
             ],
@@ -578,4 +588,31 @@ class GigsCard extends StatelessWidget {
       ),
     );
   }
+}
+
+Future<bool> logOutDialog(BuildContext context) {
+  return showDialog<bool>(
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        backgroundColor: const Color(0xff282b41),
+        title: const Text('Logout'),
+        content: const Text('do you want to logout?'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(false);
+            },
+            child: const Text('Cancle'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(true);
+            },
+            child: const Text('Logout'),
+          ),
+        ],
+      );
+    },
+  ).then((value) => value ?? false);
 }
