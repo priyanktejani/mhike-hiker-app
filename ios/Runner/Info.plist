@@ -46,6 +46,12 @@
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<string>Choose Photo from Gallery</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Choose Photo from Gallery</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Choose Photo from Gallery</string>
+	<key>NSMicrophoneUsageDescription</key>
 	<true/>
 </dict>
 </plist>
