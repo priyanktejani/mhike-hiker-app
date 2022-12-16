@@ -35,7 +35,6 @@ class FirebaseAuthProvider implements AuthProvider {
         password: password,
       );
 
-      // call the get method above
       final user = currentUser;
 
       if (user != null) {
@@ -91,7 +90,6 @@ class FirebaseAuthProvider implements AuthProvider {
 
   @override
   Future<void> logout() async {
-    // here can be auth user like other methods
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       return FirebaseAuth.instance.signOut();

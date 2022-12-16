@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:mhike/constants/routes.dart';
-import 'package:mhike/pages/home_page.dart';
-import 'package:mhike/pages/login_page.dart';
-import 'package:mhike/pages/signup_page.dart';
+import 'package:mhike/pages/add_hike_page.dart';
+import 'package:mhike/pages/hike_detail/hike_detail_page.dart';
+import 'package:mhike/pages/home/home_page.dart';
+import 'package:mhike/pages/auth/login_page.dart';
+import 'package:mhike/pages/auth/signup_page.dart';
+import 'package:mhike/pages/search_page.dart';
 import 'package:mhike/services/auth/auth_service.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -26,11 +31,15 @@ class MyApp extends StatelessWidget {
         loginRoute: (context) => const LoginPage(),
         signupRoute: (context) => const SignupPage(),
         homeRoute: (context) => const HomePage(),
+        searchRoute: (context) => const SearchPage(),
+        addHikeRoute: (context) => const AddHikePage(),
+        hikeDetailRoute: (context) => const HikeDetailPage(),
       },
     );
   }
 }
 
+// Authentication Wrapper
 class AuthenticationWrapper extends StatefulWidget {
   const AuthenticationWrapper({Key? key}) : super(key: key);
 
@@ -47,6 +56,7 @@ class _AuthenticationWrapperState extends State<AuthenticationWrapper> {
         switch (snapshot.connectionState) {
           case ConnectionState.done:
             final user = AuthService.firebase().currentUser;
+            // if user signed in than return home else login
             if (user != null) {
               return const HomePage();
             } else {

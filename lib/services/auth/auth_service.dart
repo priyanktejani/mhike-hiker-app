@@ -2,7 +2,6 @@ import 'package:mhike/services/auth/auth_provider.dart';
 import 'package:mhike/services/auth/auth_user.dart';
 import 'package:mhike/services/auth/firebase_auth_provider.dart';
 
-// 4
 class AuthService implements AuthProvider {
   final AuthProvider provider;
 
