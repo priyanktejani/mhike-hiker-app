@@ -40,3 +40,6 @@ https://github.com/priyanktejani/mhike-hiker-app.git
     <img width=24%; src="https://github.com/priyanktejani/mhike-hiker-app/blob/master/screenshots/hike_comment.png">
 	<img width=24%; src="https://github.com/priyanktejani/mhike-hiker-app/blob/master/screenshots/hike_pictures.png">
 </p>
+
+## License
+MIT. Copyright (c) [MIT License](./LICENSE).
