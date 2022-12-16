@@ -1,13 +1,23 @@
-# mhike
+<h1 align="center">mhike - Hiker App</h1>
 
-A Flutter Hike project.
 
-## Getting Started
+<br>
 
-To run Hike app, configuration of firebase is required. therofre to use the "applicationId" value specified in the "app/build.gradle" file of the app as the Android package name. 
+<p align="center">A hiking app that allows you to add hikes and record observations during hikes, comments, and rate hikes.</p>
+<div align="center">
 
-(1) Download the generated google-services.json file, and copy it to the android/app/ directory of the sample you wish to run.
+</div>
 
-(2) Download the generated firebase_app_id_file file, and copy it to the ios/ directory of the sample you wish to run.
+## Test
+1. Clone this repository or download as zip.
 
-(2) Download the generated firebase_options file, and copy it to the lib/ directory of the sample you wish to run.
+```sh
+https://github.com/priyanktejani/mhike-hiker-app.git
+``` 
+
+## Features
+- Recording details of planned hikes, including the location, distance, difficulty level, and any description.
+- Adding observations during a hike, such as photos, notes, types of observations.
+- Viewing a list of planned hikes and observations made during previous hikes.
+- Editing or deleting planned hikes and observations.
+- Comment and rate hikes
