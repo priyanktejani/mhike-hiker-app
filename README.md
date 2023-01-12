@@ -20,11 +20,12 @@ https://github.com/priyanktejani/mhike-hiker-app.git
 ``` 
 
 ## Features
-- Recording details of planned hikes, including the location, distance, difficulty level, and any description.
-- Adding observations during a hike, such as photos, notes, types of observations.
-- Viewing a list of planned hikes and observations made during previous hikes.
-- Editing or deleting planned hikes and observations.
+- Record details of planned hikes, including the location, distance, difficulty level, and any description.
+- Add observations during a hike, such as photos, notes, types of observations.
+- View a list of planned hikes and observations made during previous hikes.
+- Edit or delete planned hikes and observations.
 - Comment and rate hikes.
+
 
 <p align="center">
 	<img width=24%; src="https://github.com/priyanktejani/mhike-hiker-app/blob/master/screenshots/login.png">
